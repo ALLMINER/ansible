@@ -1,0 +1,14 @@
+- name: test
+  hosts: all
+
+  tasks:
+  - name: curl_tg_test
+    uri:
+      url: https://api.telegram.org/bot1079989929:AAF2fYGjUhLxeLPrWuHZyQ6-YXjb5lbaNPA/sendMessage
+      method: POST
+      body_format: json
+      return_content: true
+      headers:
+        Content-Type: "application/json"
+      body: '{"chat_id": "-1001243788679", "text": "This is a test from curl", "disable_notification": true}'
+ 

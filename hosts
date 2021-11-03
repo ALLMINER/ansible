@@ -1,0 +1,6 @@
+[ubuntu]
+vps ansible_host=161.97.161.74 ansible_user=root
+#[oracle]
+
+#[alls:chidren]
+#[ubuntu]
