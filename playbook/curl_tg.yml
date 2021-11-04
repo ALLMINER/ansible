@@ -1,5 +1,5 @@
 - name: test
-  hosts: all
+  hosts:  "{{ var_host | default('all') }}"
 
   tasks:
   - name: curl_tg_test
