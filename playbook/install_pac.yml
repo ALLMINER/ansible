@@ -1,0 +1,13 @@
+- hosts: "{{ var_host | default('all') }}"
+  tasks:
+    - name: install pac
+      become: true
+      become_user: root
+      apt:
+        state: present
+        name:
+         - python3
+         - htop
+         - curl
+         - wget
+         - python3-pip

@@ -1,0 +1,15 @@
+- name: package
+  hosts: "{{ var_host | default('all') }}"
+ 
+
+
+
+
+  tasks:
+  - name: Install ntpdate
+    ansible.builtin.package:
+      name: ntpdate
+      state: present
+    become: true 
+# This uses a variable as this changes per distribution.
+

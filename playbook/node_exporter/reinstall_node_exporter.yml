@@ -1,0 +1,19 @@
+- name: "adduser node_exporter"
+  become: true
+  become_user: root
+  become_method: su
+  hosts: "{{ var_host | default('none') }}"
+  tasks:
+  - name: create user
+    user:
+      name: node_exporter
+      groups: node_exporter
+      append: yes
+      create_home: no
+      shell: /sbin/nologin
+      state: present
+      comment: "Node_exporter nologin User"
+  - name: Remove the apache package prometheus-node-exporter
+    ansible.builtin.package:
+      name: prometheus-node-exporter
+      state: absent
