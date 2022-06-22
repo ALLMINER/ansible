@@ -4,7 +4,7 @@
   tasks:
           # upload ssh key                
           - authorized_key:
-                  user: alexandr
+                  user: user
                   state: present
                   manage_dir: yes
                   key: "{{ lookup('file', '../id_rsa.pub') }}"
